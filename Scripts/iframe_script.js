@@ -1,3 +1,7 @@
+var settings;
+var settings_source;
+var settings_origin;
+
 window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event)
@@ -8,4 +12,7 @@ function receiveMessage(event)
     //     return;
 
     console.log("iframe receiving event from origin " + origin + ", data = " + event.data);
+    settings = event.data
+    settings_origin = origin;
+    settings_source = event.source;
 }
