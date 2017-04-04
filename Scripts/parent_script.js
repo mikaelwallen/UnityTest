@@ -7,3 +7,9 @@ else {
 }
 
 localStorage.setItem("settings", "Test settings");
+
+var iframe =  document.getElementById("unity-frame");
+iframe.onload = function() {
+    var iframe_window = iframe.contentWindow;
+    iframe_window.postMessage(localStorage.getItem("settings"), "http://localhost");
+};
